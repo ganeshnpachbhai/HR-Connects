@@ -15,6 +15,14 @@ from pathlib import Path
 import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+import os
+
+DEBUG = True  # VERY IMPORTANT (temporary)
+
+ALLOWED_HOSTS = ['hr-connects.onrender.com']
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-local-default")
@@ -42,7 +50,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
