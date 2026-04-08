@@ -1,1 +1,2 @@
-web: gunicorn HR_connect.wsgi --log-file -
+web: gunicorn HR_connect.wsgi:application
+
